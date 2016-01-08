@@ -1,22 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ReactiveKitDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFz-xi-sm1">
+                                <rect key="frame" x="137" y="269" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yiH-on-Put">
+                                <rect key="frame" x="100" y="220" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="4jd-JT-Uz3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBb-tU-6dT">
+                                <rect key="frame" x="236" y="219" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-S6-JVK">
+                                <rect key="frame" x="36" y="325" width="248" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="HZL-F1-Mvn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zFz-xi-sm1" firstAttribute="top" secondItem="yiH-on-Put" secondAttribute="bottom" constant="19" id="CxT-aL-pxh"/>
+                            <constraint firstItem="zFz-xi-sm1" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ItA-rW-Jna"/>
+                            <constraint firstItem="Cey-S6-JVK" firstAttribute="top" secondItem="zFz-xi-sm1" secondAttribute="bottom" constant="26" id="JPX-DC-wha"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cey-S6-JVK" secondAttribute="trailing" constant="20" id="ZO9-4p-SX0"/>
+                            <constraint firstItem="zBb-tU-6dT" firstAttribute="leading" secondItem="yiH-on-Put" secondAttribute="trailing" constant="16" id="bWI-NL-8cz"/>
+                            <constraint firstItem="yiH-on-Put" firstAttribute="centerY" secondItem="zBb-tU-6dT" secondAttribute="centerY" id="cUq-Yw-XT7"/>
+                            <constraint firstItem="yiH-on-Put" firstAttribute="centerX" secondItem="zFz-xi-sm1" secondAttribute="centerX" id="eTU-01-rOk"/>
+                            <constraint firstItem="zFz-xi-sm1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="inC-KP-n83"/>
+                            <constraint firstItem="Cey-S6-JVK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="sfr-s6-aPF"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="button" destination="zFz-xi-sm1" id="OVf-YM-tgz"/>
+                        <outlet property="indicator" destination="zBb-tU-6dT" id="OG2-WA-uH1"/>
+                        <outlet property="label" destination="Cey-S6-JVK" id="0aV-xm-oOF"/>
+                        <outlet property="textField" destination="yiH-on-Put" id="JRG-dG-qOt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

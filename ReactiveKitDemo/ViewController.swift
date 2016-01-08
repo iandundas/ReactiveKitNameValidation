@@ -1,25 +1,28 @@
-//
-//  ViewController.swift
-//  ReactiveKitDemo
-//
+
 //  Created by Ian Dundas on 08/01/2016.
-//  Copyright © 2016 IanDundas. All rights reserved.
-//
 
 import UIKit
+import ReactiveKit
+import ReactiveUIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var indicator: UISwitch!
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var label: UILabel!
+    
+    let viewModel = ViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Bind the controls to the ViewModel:
+        textField.rText.bindTo(viewModel.name)
+        
+        // Bind the ViewModel to the controls:
+        viewModel.nameValidation.bindTo(label.rText)
+        viewModel.nameIsValid.bindTo(indicator.rOn)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
